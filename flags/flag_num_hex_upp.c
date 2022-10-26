@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   flag_num_hex_upp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:37:51 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:21:25 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/25 17:47:10 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/25 19:17:56 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void ft_putstr(char *s, int *len)
+void flag_num_hex_upp(int num, int *len)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-		++*len;
-	}
+	*len = ft_put_hex(num, 'A');
 }

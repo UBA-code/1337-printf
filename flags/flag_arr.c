@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:32:40 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 13:40:33 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:34:24 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int flag_arr(char *s)
+void flag_arr(char *s, int *len)
 {
-	return (ft_putstr(s));
+	ft_putstr(s, len);
 }

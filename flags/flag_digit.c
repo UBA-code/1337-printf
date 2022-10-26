@@ -6,12 +6,25 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:41:24 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 13:57:07 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:46:08 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-int flag_digit(int nb)
+void flag_digit(int nb, int *len)
 {
-	ft_putnbr();
+	int len_nb;
+	int number;
+	
+	number = nb;
+	len_nb = 0;
+	while (number != 0)
+	{
+		number /= 10;
+		len_nb++;
+	}
+	if (nb < 0)
+		len_nb++;
+	*len = len_nb;
+	ft_putnbr(nb);
 }

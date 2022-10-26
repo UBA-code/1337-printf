@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:44:11 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 14:18:00 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:56:43 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,36 @@
 # define FT_PRINTF_H
 
 
+#include <stdio.h>
 #include <stdarg.h>
-#include <unsitd.h>
+#include <unistd.h>
 #include <limits.h>
-#include "./libft/libft.h"
 
 int ft_printf(const char *format, ...);
 
 // srcs
-int ft_putstr(char *s);
+void check_flags(char c, int *len, void *arg);
+void ft_putstr(char *s, int *len);
 void ft_putchar(char c);
 void ft_putnbr(int nb);
+int ft_put_hex(int num, char c);
+void ft_putnbr_unsigned(unsigned int nb);
+int ft_strlen(char *s);
+int	ft_tolower(int c);
+int ft_put_hex_pointer(size_t num, char c);
+
 
 
 // flags
-void flag_char(char c);
-int flag_arr(char *s);
-int flag_digit(int nb);
-int flag_unsigned(unsigned int nb);
-int flag_int(size_t nb);
+void flag_char(char c, int *len);
+void flag_arr(char *s, int *len);
+void flag_digit(int nb, int *len);
+void flag_unsigned(unsigned int nb, int *len);
+void flag_int(size_t nb, int *len);
+void flag_num_hex(int num, int *len);
+void flag_num_hex_upp(int num, int *len);
+void flag_pointer(int p, int *len);
+
 
 
 #endif

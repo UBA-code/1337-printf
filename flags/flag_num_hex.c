@@ -6,16 +6,12 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:16:01 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 16:53:38 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:17:37 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-int flag_num_hex(int num)
+void flag_num_hex(int num, int *len)
 {
-	flag_num_hex(num / 16);
-	if (num % 16 < 10)
-		ft_putchar(num % 16 + '0');
-	else
-		ft_putchar(num % 1 + 55);
+	*len = ft_put_hex(num, 'a');
 }

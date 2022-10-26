@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 14:43:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:12:37 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/25 17:50:06 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/25 21:30:28 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int ft_printf(const char *format, ...)
+#include "../ft_printf.h"
+int ft_put_hex(int num, char c)
 {
-	int 	i;
-	int		j;
-	va_list ptr;
+	int i;
+	int remain;
+	char tab[100];
 
-	va_start(ptr, format);
 	i = 0;
-	j = 0;
-	while (format[i])
+	while (num != 0)
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
-			check_flags(format[i++ + 1], &j, va_arg(ptr, void *));
-		else if (format[i] == '%' && format[i + 1] == '%')
-			ft_putchar(format[i++]);
+		remain = num % 16;
+		if (remain < 10)
+			tab[i++] = remain + 48;
 		else
-			ft_putchar(format[i]);
-		i++;
+			tab[i++] = remain + 55;
+		num /= 16;
 	}
-	va_end(ptr);
-	return (j);
+	tab[i] = '\0';
+	i = ft_strlen(tab);
+	if (c == 'A')
+		while (i >= 0)
+			ft_putchar(tab[i--]);
+	else
+		while (i >= 0)
+			ft_putchar(ft_tolower(tab[i--]));
+	return (ft_strlen(tab));
 }
