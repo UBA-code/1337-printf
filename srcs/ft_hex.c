@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 19:03:17 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 20:07:00 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/27 18:32:54 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/27 19:29:58 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-int ft_strlen(char *s)
+void ft_hex(size_t value, char c, int *len)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
+	int hex;
+	if (value != 0)
 	{
-		i++;
+		hex = value % 16;
+		ft_hex(value / 16, c, len);
+		if (hex > 9)
+		{
+			if (c == 'A')
+				ft_putchar('A' + (hex - 10), len);
+			else
+				ft_putchar('a' + (hex - 10), len);
+		}
+		else
+			ft_putchar(hex+ '0', len);
 	}
-	return (i);
 }

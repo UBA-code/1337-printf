@@ -5,32 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 14:43:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/27 17:10:34 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/27 17:19:44 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/27 20:19:59 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+void check_flags(char flag, int *len, va_list arg)
+{
+	if (flag == 'c')
+		ft_putchar(va_arg(arg, int), len);
+	else if (flag == 's')
+		ft_putstr(va_arg(arg, char *), len);
+	else if (flag == 'p')
+		ft_pointer(va_arg(arg, size_t), len);
+	else if (flag == 'd' || flag == 'i')
+		ft_putnbr(va_arg(arg, int), len);
+	else if (flag == 'u')
+		ft_putnbr_unsigned(va_arg(arg, unsigned int), len);
+	else if (flag == 'x')
+		ft_hex(va_arg(arg, size_t), 'a', len);
+	else if (flag == 'X')
+		ft_hex(va_arg(arg, size_t), 'A', len);
+}
+
 int ft_printf(const char *format, ...)
 {
-	int 	i;
-	int		j;
+	int len;
 	va_list ptr;
+	int i;
 
-	va_start(ptr, format);
 	i = 0;
-	j = 0;
+	len = 0;
+	va_start(ptr, format);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
-			check_flags(format[i++ + 1], &j, ptr);
+			check_flags(format[++i], &len, ptr);
 		else if (format[i] == '%' && format[i + 1] == '%')
-			ft_putchar(format[i++]);
+			ft_putchar(format[++i], &len);
 		else
-			ft_putchar(format[i]);
+			ft_putchar(format[i], &len);
 		i++;
 	}
-	va_end(ptr);
-	return (j);
+	return (len);
 }

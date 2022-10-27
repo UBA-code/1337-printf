@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:37:51 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:21:25 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/27 17:40:55 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/27 17:42:27 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 void ft_putstr(char *s, int *len)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar(s[i], len);
 		i++;
-		++*len;
 	}
 }

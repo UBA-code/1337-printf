@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:29:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/26 18:39:43 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/27 17:37:29 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/27 19:49:37 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-void ft_putchar(char c)
+void ft_putchar(char c, int *len)
 {
+	++*len;
 	write(1, &c, 1);
 }

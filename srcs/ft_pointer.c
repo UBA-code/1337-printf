@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_num_hex.c                                     :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:16:01 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/26 20:20:40 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/27 20:21:02 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/27 20:23:23 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void flag_num_hex(unsigned int num, int *len)
+void ft_pointer(size_t pointer, int *len)
 {
-	*len = ft_put_hex(num, 'a');
+	ft_putstr("0x", len);
+	ft_hex(pointer, 'a', len);
 }
