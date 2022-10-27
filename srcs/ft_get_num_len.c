@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_num_hex.c                                     :+:      :+:    :+:   */
+/*   ft_get_num_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:16:01 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/26 20:20:40 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/10/26 18:31:11 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/10/26 18:32:28 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void flag_num_hex(unsigned int num, int *len)
+int ft_get_num_len(size_t num)
 {
-	*len = ft_put_hex(num, 'a');
+	int i;
+	size_t nb;
+
+	nb = num;
+	i = 0;
+	while (nb != 0)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
 }

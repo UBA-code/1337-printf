@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:43:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:12:37 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:10:34 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
-			check_flags(format[i++ + 1], &j, va_arg(ptr, void *));
+			check_flags(format[i++ + 1], &j, ptr);
 		else if (format[i] == '%' && format[i + 1] == '%')
 			ft_putchar(format[i++]);
 		else

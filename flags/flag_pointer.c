@@ -6,12 +6,12 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:56:24 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/26 13:58:07 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:05:17 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void flag_pointer(int p, int *len)
+void flag_pointer(size_t p, int *len)
 {
-	*len = ft_put_hex_pointer((unsigned int)p, 'a');
+	*len = ft_put_hex_pointer(p, len);
 }

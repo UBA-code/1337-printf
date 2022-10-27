@@ -6,23 +6,22 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:14:08 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/26 15:16:16 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:07:55 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-int ft_put_hex_pointer(size_t num, char c)
+int ft_put_hex_pointer(size_t num, int *len)
 {
-	// ft_putnbr((int) num);
-	// c = 'a';
-	// return (1);
-	
 	size_t i;
 	size_t remain;
-	// size_t nb = num;
-	char tab[100];
-
+	char *tab;
+	int num_len;
 	
+	num_len = ft_get_num_len(num);
+	tab = malloc(sizeof(char ) * num_len);
+	if (!tab)
+		return (0);
 	i = 0;
 	while (num != 0)
 	{
@@ -34,13 +33,7 @@ int ft_put_hex_pointer(size_t num, char c)
 		num /= 16;
 	}
 	tab[i] = '\0';
-	printf("print from ft_put_hex_pointer : %s\n", tab);
-	i = ft_strlen(tab);
-	if (c == 'A')
-		while (i >= 0)
-			ft_putchar(tab[i--]);
-	else
-		while (i >= 0)
-			ft_putchar(ft_tolower(tab[i--]));
+	ft_putstr("0x", len);
+	ft_putstr_reversed(tab);
 	return (ft_strlen(tab));
 }

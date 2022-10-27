@@ -6,12 +6,12 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:41:24 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:46:08 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:25:18 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void flag_digit(int nb, int *len)
+void flag_digit(size_t nb, int *len)
 {
 	int len_nb;
 	int number;

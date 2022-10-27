@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:12:42 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:47:39 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:20:52 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 void flag_int(size_t nb, int *len)
 {
 	int i;
-	int number;
+	size_t number;
 	
 	i = 0;
 	number = nb;
+	/*
 	if (nb > (size_t)INT_MAX)
 		ft_putchar('0');
 	else if (nb < (size_t)INT_MIN)
@@ -26,8 +27,9 @@ void flag_int(size_t nb, int *len)
 		ft_putchar('-');
 		ft_putchar('1');
 	}
-	else
-	{
+	*/
+	// else
+	// {
 		while (number != 0)
 		{
 			number /= 10;
@@ -35,5 +37,5 @@ void flag_int(size_t nb, int *len)
 		}
 		*len = i;
 		ft_putnbr(nb);
-	}
+	// }
 }

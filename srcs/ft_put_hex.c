@@ -6,15 +6,15 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:50:06 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 21:30:28 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/26 20:20:50 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-int ft_put_hex(int num, char c)
+int ft_put_hex(unsigned int num, char c)
 {
 	int i;
-	int remain;
+	unsigned int remain;
 	char tab[100];
 
 	i = 0;

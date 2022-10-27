@@ -6,12 +6,12 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:47:10 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/25 19:17:56 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/26 20:20:39 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-void flag_num_hex_upp(int num, int *len)
+void flag_num_hex_upp(unsigned int num, int *len)
 {
 	*len = ft_put_hex(num, 'A');
 }
