@@ -6,12 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:42:41 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/27 20:19:30 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:57:05 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-static int check_nb(long long nb, int *len)
+
+static int	check_nb(long long nb, int *len)
 {
 	if (nb > 2147483647)
 	{
@@ -27,7 +28,7 @@ static int check_nb(long long nb, int *len)
 	return (1);
 }
 
-void ft_putnbr(long long nb, int *len)
+void	ft_putnbr(long long nb, int *len)
 {
 	if (!check_nb(nb, len))
 		return ;

@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:19:44 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/29 12:54:07 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:57:22 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void check_flags(char flag, int *len, va_list arg)
+static void	check_flags(char flag, int *len, va_list arg)
 {
 	if (flag == 'c')
 		ft_putchar(va_arg(arg, int), len);
@@ -30,11 +30,11 @@ static void check_flags(char flag, int *len, va_list arg)
 		ft_hex(va_arg(arg, unsigned int), 'A', len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int len;
-	va_list ptr;
-	int i;
+	int		len;
+	va_list	ptr;
+	int		i;
 
 	i = 0;
 	len = 0;
