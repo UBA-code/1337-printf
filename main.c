@@ -1,7 +1,8 @@
 #include "ft_printf.h"
+#include "limits.h"
 int main ()
 {
 	char *txt = "Hello World";
-	ft_printf("%p\n", &txt);
-	printf("%p\n", &txt);
+	ft_printf(" %x ", LONG_MAX);
+	printf(" %x ", LONG_MAX);
 }

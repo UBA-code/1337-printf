@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:19:44 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/10/27 20:19:59 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:54:07 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void check_flags(char flag, int *len, va_list arg)
+static void check_flags(char flag, int *len, va_list arg)
 {
 	if (flag == 'c')
 		ft_putchar(va_arg(arg, int), len);
@@ -25,9 +25,9 @@ void check_flags(char flag, int *len, va_list arg)
 	else if (flag == 'u')
 		ft_putnbr_unsigned(va_arg(arg, unsigned int), len);
 	else if (flag == 'x')
-		ft_hex(va_arg(arg, size_t), 'a', len);
+		ft_hex(va_arg(arg, unsigned int), 'a', len);
 	else if (flag == 'X')
-		ft_hex(va_arg(arg, size_t), 'A', len);
+		ft_hex(va_arg(arg, unsigned int), 'A', len);
 }
 
 int ft_printf(const char *format, ...)
